@@ -22,8 +22,8 @@
   </div>
 
   <div>
-    <%= form.label :label, style: "display: block" %>
-    <%= form.collection_check_boxes :labels, Label.all, :id, :name %>
+    <%= form.label :label_id, style: "display: block" %>
+    <%= form.collection_select :label_id, Label.all, :id, :name, include_blank: true %>
   </div>
 
   <div>

@@ -39,12 +39,13 @@ class LabelsController < ApplicationController
 
     redirect_to labels_url, notice: "Label was successfully destroyed."
   end
+
   private
     def label
       @label = Label.find(params[:id])
     end
 
     def label_params
-      params.require(:label).permit(:name, :publication_id)
+      params.require(:label).permit(:name)
     end
 end
