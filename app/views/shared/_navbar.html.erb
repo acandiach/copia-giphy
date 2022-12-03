@@ -1,0 +1,25 @@
+
+
+<nav class="container">
+  <ul>
+    <li><%= link_to "🏠", root_path %></li>
+    <li><%= link_to "Listado de Publicaciones", publications_path %></li>
+    <%#<li><%= link_to "Labels", labels_path %></li>
+    <%#<li><%= link_to "Publications", publications_path %></li>
+  </ul>
+  <ul>
+    <% if user_signed_in? %>
+      <%#<% if current_user.rol == "seller" %>
+      <li><%= link_to "Nueva Publicacion", new_publication_path %></li>
+      <%#<% else %>
+        <%#no puede Publicar%>
+      <%#<% end %>
+      <li><strong><%= current_user.email %></strong></li>
+      <li><%= link_to "Editar perfil", edit_user_registration_path %></li>
+      <li><%= link_to "Cerrar sesion", destroy_user_session_path, 'data-turbo-method': :delete %></li>
+    <% else %>
+      <li><%= link_to "Inicia sesion", new_user_session_path %></li>
+      <li><%= link_to "Registrate", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>

@@ -11,13 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container">
-    <nav>
-      <ul>
-        <li><%= link_to "Labels", labels_path %></li>
-        <li><%= link_to "Publications", publications_path %></li>
-      </ul>
-    </nav>
-    <%= yield %>
+  <body>
+    <%= render 'shared/navbar' %>
+    <main class="container">
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    </main>
   </body>
 </html>

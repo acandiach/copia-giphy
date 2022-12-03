@@ -1,4 +1,5 @@
 class PublicationsController < ApplicationController
+  before_action :authenticate_user!, except: %i[ index show ]
 
   def index
     @publications = Publication.all
@@ -9,7 +10,7 @@ class PublicationsController < ApplicationController
   end
 
   def new
-    @publication = Publication.new
+    @publication = current_user.publications.build
   end
 
   def edit
@@ -17,7 +18,7 @@ class PublicationsController < ApplicationController
   end
 
   def create
-    @publication = Publication.new(publication_params)
+    @publication = current_user.publications.build(publication_params)
 
     if @publication.save
       redirect_to publications_path, notice: "Publication was successfully created."
@@ -47,6 +48,6 @@ class PublicationsController < ApplicationController
     end
 
     def publication_params
-      params.require(:publication).permit(:title, :description, :label_id)
+      params.require(:publication).permit(:title, :description, :label_id, :user_id)
     end
 end

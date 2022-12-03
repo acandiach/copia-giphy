@@ -9,4 +9,8 @@
     <%= publication.description %>
   </p>
 
+  <p>
+    <strong>User:</strong>
+    <%= link_to publication.user.email, user_publications_path %>
+  </p>
 </div>
