@@ -1,5 +1,5 @@
 class Label < ApplicationRecord
-  has_many :publication, dependent: :destroy
+  has_many :publications, dependent: :destroy
  
   validates :name, presence: true
 end
