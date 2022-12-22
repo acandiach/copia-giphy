@@ -1,9 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+publication_one:
+  title: Prueba
+  description: es una de las dos pruebas
+  label_id: 1
+  user_id: 1
 
-two:
-  title: MyString
-  description: MyText
+publication_two:
+  title: Prueba2
+  description: es la segunda de las dos pruebas
+  label_id: 1
+  user_id: 1
+
