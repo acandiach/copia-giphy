@@ -10,7 +10,13 @@
   </p>
 
   <p>
+    <strong>Label:</strong>
+    <%= publication.label.name %>
+  </p>
+
+
+  <p>
     <strong>User:</strong>
-    <%= link_to publication.user.email, user_publications_path %>
+    <%= link_to publication.user.email, '/users/:user_id/publications' %>
   </p>
 </div>
